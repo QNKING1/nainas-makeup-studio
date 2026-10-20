@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naina's Makeup Studio — Bridal &amp; Beauty, Shāhdādpur</title>
+<meta name="theme-color" content="#161A33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='14' fill='%23161A33'/%3E%3Cpath d='M8 4v16M16 4v16M8 4L16 20M16 4L8 20' stroke='%23C9B6FF' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;0,900;1,600&family=Manrope:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161A33;
+    --ink2:#212748;
+    --lilac:#C9B6FF;
+    --lilac-dark:#A896F2;
+    --lav:#F7F3FF;
+    --lav2:#EDE7FF;
+    --text:#1B1F3A;
+    --muted:#6B728B;
+    --white:#FFFFFF;
+    --radius-sm:10px;
+    --radius-md:18px;
+    --radius-lg:30px;
+    --radius-pill:999px;
+    --font-head:'Bodoni Moda',serif;
+    --font-body:'Manrope',sans-serif;
+    --font-urdu:'Noto Nastaliq Urdu','Noto Nastaliq Urdu',serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:var(--font-body);
+    background:var(--white);
+    color:var(--text);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{width:100%;max-width:430px;margin:0 auto;padding:0 16px;}
+  section{padding:40px 0;}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+  /* Ribbon */
+  .ribbon{
+    background:var(--ink);
+    color:var(--lav);
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.6px;
+    text-align:center;
+    padding:7px 16px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Header */
+  .headerbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 0 24px;
+  }
+  .logo{display:flex;align-items:center;gap:12px;}
+  .monogram{
+    width:44px;height:44px;
+    background:linear-gradient(135deg,var(--ink),var(--ink2));
+    border-radius:14px;
+    display:grid;place-items:center;
+    box-shadow:0 10px 24px rgba(22,26,51,0.25);
+    position:relative;
+  }
+  .monogram svg{width:24px;height:24px;fill:none;stroke:#FFFFFF;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+  .brandname{font-family:var(--font-head);font-size:20px;font-weight:800;letter-spacing:-0.4px;color:var(--ink);}
+  .brandname span{font-weight:400;font-style:italic;color:var(--lilac-dark);}
+  .btn-book{
+    background:var(--ink);
+    color:var(--white);
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:15px;
+    border:none;
+    border-radius:var(--radius-pill);
+    padding:12px 20px;
+    cursor:pointer;
+    box-shadow:0 10px 22px rgba(22,26,51,0.22);
+    transition:transform .15s,box-shadow .15s,background .15s;
+  }
+  .btn-book:active{transform:scale(0.97);}
+
+  /* Hero */
+  .hero{position:relative;padding:34px 0 0;overflow:hidden;}
+  .hero .blob{
+    position:absolute;top:-22%;left:-10%;width:260px;height:260px;
+    background:radial-gradient(circle at 30% 30%,rgba(201,182,255,0.18),transparent 60%);
+    border-radius:50% 45% 50% 40%/45% 50% 45% 50%;
+    z-index:0;
+  }
+  .hero .blob2{
+    position:absolute;bottom:-14%;right:-8%;width:200px;height:200px;
+    background:radial-gradient(circle at 70% 70%,rgba(168,150,242,0.12),transparent 55%);
+    border-radius:50% 55% 45% 45%/55% 45% 55% 40%;
+    z-index:0;
+  }
+  .hero-head{z-index:2;position:relative;}
+  .hero h1{
+    font-family:var(--font-head);
+    font-size:27px;
+    font-weight:800;
+    line-height:1.18;
+    letter-spacing:-0.6px;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .hero .hlsub{font-weight:600;color:var(--ink2);}
+  .urdu-line{
+    font-family:var(--font-urdu);
+    font-size:22px;
+    font-weight:600;
+    color:var(--ink2);
+    line-height:2.2;
+    margin-bottom:14px;
+    direction:rtl;
+    text-align:right;
+  }
+  .cityline{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--lilac-dark);
+    display:flex;align-items:center;gap:8px;margin-bottom:16px;
+  }
+  .cityline::before{content:"";width:6px;height:6px;background:var(--lilac);border-radius:50%;}
+  .herotwo{display:flex;flex-direction:column;gap:12px;z-index:2;position:relative;}
+  .cta-wrap{display:flex;flex-direction:column;gap:10px;}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--ink),var(--ink2));
+    color:var(--white);
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:16px;
+    border:none;
+    border-radius:var(--radius-pill);
+    padding:14px 18px;
+    cursor:pointer;
+    box-shadow:0 14px 26px rgba(22,26,51,0.28);
+    transition:transform .15s,box-shadow .15s;
+    text-align:center;
+  }
+  .btn-primary:active{transform:scale(0.97);}
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border:2px solid var(--ink);
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:15px;
+    border-radius:var(--radius-pill);
+    padding:13px 18px;
+    cursor:pointer;
+    transition:background .15s,color .15s;
+    text-align:center;
+  }
+  .btn-outline:active{background:var(--lav);}
+  .phonecard{
+    position:relative;z-index:2;
+    width:100%;height:320px;
+    background:var(--lav);
+    border-radius:34px;
+    box-shadow:0 24px 48px rgba(22,26,51,0.16),inset 0 0 0 1px rgba(201,182,255,0.25);
+    margin-top:6px;
+    padding:20px;
+    display:flex;flex-direction:column;
+    overflow:hidden;
+  }
+  .phone-header{
+    height:10px;width:62px;background:#2A2F4A;border-radius:5px;margin:0 auto 8px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .screen{
+    flex:1;background:#0F1223;border-radius:22px;overflow:hidden;position:relative;
+    padding:16px 14px;display:flex;flex-direction:column;
+  }
+  .chat{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-bottom:8px;}
+  .bubble{max-width:78%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.45;color:#FFFFFF;position:relative;}
+  .bubble.me{background:linear-gradient(135deg,var(--ink),var(--ink2));align-self:flex-end;border-bottom-right-radius:4px;}
+  .bubble.them{background:#2A2F4A;align-self:flex-start;border-bottom-left-radius:4px;}
+  .typing{align-self:flex-start;display:flex;gap:6px;padding:4px 0;}
+  .dot{width:8px;height:8px;background:var(--lilac);border-radius:50%;opacity:0.6;animation:blip 1.4s infinite ease-in-out both;}
+  .dot:nth-child(2){animation-delay:0.2s;}
+  .dot:nth-child(3){animation-delay:0.4s;}
+  @keyframes blip{0%,80%,100%{transform:scale(0.9);opacity:0.4;}40%{transform:scale(1.15);opacity:1;}}
+  .sendbar{display:flex;align:center;padding-top:6px;}
+  .sendbar{display:flex;align-items:center;gap:8px;}
+  .sendbar input{flex:1;background:#1B2035;border:1px solid #3A4160;border-radius:20px;padding:8px 14px;color:#FFFFFF;font-size:13px;}
+  .sendbar input::placeholder{color:#8B93B8;}
+  .sendbar button{background:var(--lilac);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;}
+  .phone-mask{
+    position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    width:140px;height:24px;background:#101429;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;gap:6px;z-index:4;
+  }
+  .cam{width:9px;height:9px;background:#2A2F4A;border-radius:50%;box-shadow:0 0 0 1px #3A4160;}
+  .flash{width:3px;height:5px;background:#3A4160;border-radius:2px;}
+  .statusrow{font-size:11px;color:#8B93B8;display:flex;justify-content:space-between;padding:10px 14px 0;}
+  .hero .reveal{opacity:0;transform:translateY(18px);animation:fadeup .7s ease forwards;}
+  .hero .reveal:nth-child(2){animation-delay:.12s;}
+  .hero .reveal:nth-child(3){animation-delay:.24s;}
+  .hero .reveal:nth-child(4){animation-delay:.36s;}
+  @keyframes fadeup{to{opacity:1;transform:translateY(0);}}
+  .phonecard{opacity:0;animation:fadein .9s .25s forwards;}
+  @keyframes fadein{to{opacity:1;}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .reveal,.phonecard{opacity:1;transform:none;animation:none;}
+    .marquee{animation:none;}
+    .dot{animation:none;}
+  }
+
+  /* Marquee */
+  .marquee-wrap{overflow:hidden;background:var(--ink);padding:14px 0;mask-image:linear-gradient(to right,black 15%,black 85%,transparent 100%);}
+  .marquee{
+    display:flex;gap:34px;white-space:nowrap;
+    animation:marq 20s linear infinite;
+  }
+  .marquee span{color:rgba(255,255,255,0.55);font-weight:700;font-size:14px;letter-spacing:1px;}
+  @keyframes marq{to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){.marquee{animation:none;} .marquee-wrap{mask:none;}}
+
+  /* Menu */
+  .menu{position:relative;z-index:2;}
+  .menuhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+  .menu h2{
+    font-family:var(--font-head);
+    font-size:24px;
+    font-weight:800;
+    color:var(--ink);
+    letter-spacing:-0.4px;
+  }
+  .pricenote{
+    font-size:14px;font-weight:700;color:var(--lilac-dark);
+    background:var(--lav2);padding:7px 14px;border-radius:12px;display:inline-block;
+  }
+  .servicesmenu{margin-top:16px;display:grid;gap:10px;}
+  .svcgroup{margin-top:14px;}
+  .svcgroup:first-child{margin-top:0;}
+  .svcgroup h3{
+    font-size:15px;font-weight:700;color:var(--ink2);margin-bottom:8px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .svcgroup h3::after{content:"";flex:1;height:1px;background:var(--lav2);}
+  .svcitem{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px;border:1px solid var(--lav2);border-radius:14px;background:var(--white);
+  }
+  .svcitem .info{flex:1;}
+  .svcitem .name{font-weight:700;font-size:15px;color:var(--ink);margin-bottom:2px;}
+  .svcitem .desc{font-size:13px;color:var(--muted);}
+  .svcitem .ask{
+    background:var(--ink);color:var(--white);font-weight:700;font-size:13px;
+    border:none;border-radius:10px;padding:7px 12px;cursor:pointer;
+  }
+  .svcitem .ask:active{transform:scale(0.96);}
+
+  /* Feature band */
+  .feature{
+    background:linear-gradient(135deg,var(--ink),var(--ink2));
+    color:var(--white);border-radius:var(--radius-lg);
+    padding:32px 20px;margin-top:8px;position:relative;overflow:hidden;
+  }
+  .feature::before{
+    content:"";position:absolute;top:-40%;right:-20%;width:220px;height:220px;
+    background:radial-gradient(circle at 80% 20%,rgba(201,182,255,0.16),transparent 55%);
+    border-radius:50%;
+  }
+  .feature h2{
+    font-family:var(--font-head);font-size:24px;font-weight:800;
+    line-height:1.25;letter-spacing:-0.4px;margin-bottom:10px;position:relative;z-index:2;
+  }
+  .feature p{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.9);margin-bottom:18px;position:relative;z-index:2;}
+  .feature .btn-zari{
+    background:var(--lilac);color:var(--ink);font-weight:800;font-size:15px;
+    border:none;border-radius:var(--radius-pill);padding:12px 20px;cursor:pointer;position:relative;z-index:2;
+  }
+  .feature .btn-zari:active{transform:scale(0.97);}
+
+  /* Steps */
+  .steps{display:grid;gap:14px;}
+  .step{
+    display:flex;gap:14px;padding:16px 18px;background:var(--lav);
+    border:1px solid var(--lav2);border-radius:18px;
+  }
+  .num{
+    width:30px;height:30px;background:var(--ink);color:var(--lilac);
+    font-family:var(--font-head);font-weight:800;font-size:15px;
+    border-radius:50%;display:grid;place-items:center;flex:0 0 30px;
+  }
+  .step .txt h4{font-weight:800;font-size:16px;color:var(--ink);margin-bottom:3px;}
+  .step .txt p{font-size:14px;color:var(--muted);line-height:1.5;}
+
+  /* Form */
+  .formwrap{background:var(--lav);border:1px solid var(--lav2);border-radius:var(--radius-lg);padding:26px 20px;}
+  .formwrap h2{
+    font-family:var(--font-head);font-size:23px;font-weight:800;color:var(--ink);
+    margin-bottom:6px;letter-spacing:-0.4px;
+  }
+  .formwrap p{font-size:14px;color:var(--muted);margin-bottom:20px;}
+  .formgrid{display:grid;gap:12px;}
+  .formgroup label{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:6px;}
+  .formgroup input,.formgroup select{
+    width:100%;background:var(--white);border:1.5px solid #D8D6EA;border-radius:12px;
+    padding:12px 14px;font-size:15px;color:var(--text);font-family:inherit;
+  }
+  .formgroup input:focus,.formgroup select:focus{outline:none;border-color:var(--lilac-dark);}
+  .btn-send{
+    margin-top:6px;background:linear-gradient(135deg,var(--ink),var(--ink2));
+    color:var(--white);font-family:var(--font-body);font-weight:800;font-size:16px;
+    border:none;border-radius:var(--radius-pill);padding:14px 20px;cursor:pointer;
+    box-shadow:0 14px 26px rgba(22,26,51,0.26);
+  }
+  .btn-send:active{transform:scale(0.97);}
+
+  /* Visit */
+  .visit h2{
+    font-family:var(--font-head);font-size:25px;font-weight:800;color:var(--ink);
+    margin-bottom:10px;letter-spacing:-0.4px;
+  }
+  .addrbig{
+    font-size:30px;font-weight:800;line-height:1.15;color:var(--ink);margin-bottom:8px;
+  }
+  .addrbig span{color:var(--lilac-dark);}
+  .visit p{font-size:15px;color:var(--muted);margin-bottom:14px;line-height:1.6;}
+  .visitrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .chip{
+    background:var(--lav);border:1px solid var(--lav2);border-radius:14px;
+    padding:14px 16px;text-align:center;
+  }
+  .chip b{display:block;font-size:14px;font-weight:800;color:var(--ink);margin-bottom:3px;}
+  .chip span{font-size:13px;color:var(--muted);line-height:1.4;}
+  .mapwrap{margin:18px 0;border-radius:18px;overflow:hidden;border:1px solid var(--lav2);background:#101429;min-height:220px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-size:14px;}
+  .visit .btn-row{display:flex;gap:10px;margin-top:8px;}
+  .visit .btn-map{
+    flex:1;background:var(--ink);color:var(--white);font-weight:800;font-size:15px;
+    border:none;border-radius:var(--radius-pill);padding:13px 16px;cursor:pointer;
+  }
+  .visit .btn-call{
+    background:transparent;color:var(--ink);border:2px solid var(--ink);font-weight:800;font-size:15px;
+    border-radius:var(--radius-pill);padding:13px 16px;cursor:pointer;
+  }
+
+  /* Footer */
+  .footer{border-top:1px solid var(--lav2);padding:30px 0 40px;}
+  .foottop{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .footlogo{width:36px;height:36px;background:var(--ink);border-radius:10px;display:grid;place-items:center;}
+  .footlogo svg{width:18px;height:18px;fill:none;stroke:#FFFFFF;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+  .footname{font-family:var(--font-head);font-weight:800;font-size:17px;color:var(--ink);letter-spacing:-0.3px;}
+  .footname span{font-weight:400;font-style:italic;color:var(--lilac-dark);}
+  .footcontact{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px;}
+  .footcontact b{color:var(--ink);}
+  .demofoot{
+    font-size:12px;color:#8B93B8;text-align:center;margin-top:22px;padding-top:16px;border-top:1px solid var(--lav2);
+  }
+  .sticky-wa{
+    position:fixed;right:16px;bottom:16px;z-index:50;
+  }
+  .sticky-wa a{
+    display:flex;align-items:center;gap:10px;background:#25D366;color:#FFFFFF;
+    font-weight:800;font-size:15px;padding:14px 18px;border-radius:var(--radius-pill);
+    box-shadow:0 12px 24px rgba(37,211,102,0.35);border:2px solid #FFFFFF;
+  }
+  .sticky-wa svg{width:22px;height:22px;fill:none;stroke:#FFFFFF;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Demo preview &mdash; made for Naina's Makeup Studio</div>
+
+<header class="headerbar">
+  <div class="logo">
+    <div class="monogram" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 4v16M16 4v16" stroke="#C9B6FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.55"/>
+        <path d="M8 4L16 20M16 4L8 20" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+    <div class="brandname">Naina's <span>Makeup Studio</span></div>
+  </div>
+  <button class="btn-book" onclick="loc.href='https://wa.me/923051346424?text='+encodeURIComponent('Assalam o Alaikum, I saw Naina&#39;s Makeup Studio&#39;s website demo and would like to book an appointment.')">Book on WhatsApp</button>
+</header>
+
+<section class="hero">
+  <div class="blob"></div><div class="blob2"></div>
+  <div class="container">
+    <div class="hero-head reveal">
+      <div class="cityline reveal">Shāhdādpur &bull; 68030</div>
+      <h1>Naina's Makeup Studio <span class="hlsub">&mdash; bridal &amp; beauty, one message away</span></h1>
+      <div class="urdu-line reveal">بکنگ کے لیے WhatsApp پر ہمیں میسج کریں</div>
+    </div>
+    <div class="herotwo">
+      <div class="cta-wrap reveal">
+        <button class="btn-primary" onclick="loc.href='https://wa.me/923051346424?text='+encodeURIComponent('Assalam o Alaikum, I would like to book an appointment at Naina&#39;s Makeup Studio, Shāhdādpur.')">Book on WhatsApp</button>
+        <a class="btn-outline" href="tel:+923051346424">Call now</a>
+      </div>
+      <div class="phonecard reveal" aria-label="WhatsApp booking chat preview" role="img" aria-label="WhatsApp chat showing a customer booking a salon appointment">
+        <div class="phone-header"></div>
+        <div class="screen">
+          <div class="statusrow"><span style="color:#5B628A">11:42</span><span style="color:#5B628A">Naina&rsquo;s Makeup Studio</span></div>
+          <div class="chat" id="chat">
+            <div class="bubble me">Assalam o Alaikum, I would like to book an appointment.</div>
+            <div class="typing" id="typing">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+          <div class="sendbar">
+            <input type="text" placeholder="Type a message&hellip;" readonly>
+            <button aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2 21l23-12-23-12z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee"></div>
+</div>
+
+<section class="menu container">
+  <div class="menuhead">
+    <h2>Our services</h2>
+    <div class="pricenote">Prices on WhatsApp</div>
+  </div>
+  <div class="servicesmenu">
+    <div class="svcgroup">
+      <h3>Hair</h3>
+      <div class="svcitem"><div class="info"><div class="name">Haircut</div><div class="desc">Women's haircut and trim</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Hair styling</div><div class="name">Blow-dry and set</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Hair colour</div><div class="desc">Colour and highlights</div></div><button class="ask">Book</button></div>
+    </div>
+    <div class="svcgroup">
+      <h3>Skin &amp; Facials</h3>
+      <div class="svcitem"><div class="info"><div class="name">Facial</div><div class="desc">Deep cleanse and glow</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Skin cleanup</div><div class="desc">Pore cleansing and polish</div></div><button class="ask">Book</button></div>
+    </div>
+    <div class="svcgroup">
+      <h3>Makeup &amp; Bridal</h3>
+      <div class="svcitem"><div class="info"><div class="name">Bridal makeup</div><div class="desc">Full bridal look</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Party makeup</div><div class="desc">Evening and event look</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Engagement makeup</div><div class="desc">Engagement ceremony look</div></div><button class="ask">Book</button></div>
+    </div>
+    <div class="svcgroup">
+      <h3>Threading / Waxing / Hands &amp; Feet</h3>
+      <div class="svcitem"><div class="info"><div class="name">Eyebrow threading</div><div class="desc">Precise brow shaping</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Face waxing</div><div class="desc">Gentle facial wax</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Manicure</div><div class="desc">Hand and nail care</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Pedicure</div><div class="desc">Foot and nail care</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Mehendi</div><div class="desc">Henna for hands</div></div><button class="ask">Book</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="feature container">
+  <div class="feature">
+    <h2>Bridal &amp; party looks</h2>
+    <p>Getting ready for your big day or a special evening? Message us on WhatsApp to ask about bridal dates, timings, and your look.</p>
+    <button class="btn-zari" onclick="loc.href='https://wa.me/923051346424?text='+encodeURIComponent('Assalam o Alaikum, I want to ask about bridal and party makeup at Naina&#39;s Makeup Studio.')">Ask about bridal dates on WhatsApp</button>
+  </div>
+</section>
+
+<section class="container">
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="txt"><h4>Message us on WhatsApp</h4><p>Send us your name, service, and preferred day.</p></div></div>
+    <div class="step"><div class="num">2</div><div class="txt"><h4>Choose service and time</h4><p>Tell us what you need and when you'd like to come in.</p></div></div>
+    <div class="step"><div class="num">3</div><div class="txt"><h4>Get your confirmation</h4><p>We'll confirm your appointment on WhatsApp.</p></div></div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="formwrap">
+    <h2>Book your visit</h2>
+    <p>Fill in your details and we&rsquo;ll open WhatsApp with your booking ready to send.</p>
+    <form id="bookForm" class="formgrid" novalidate>
+      <div class="formgroup"><label for="bName">Your name</label><input type="text" id="bName" placeholder="e.g. Ayesha" required></div>
+      <div class="formgroup"><label for="bService">Service</label><select id="bService" required>
+        <option value="">Choose a service</option>
+        <option>Haircut</option><option>Hair styling</option><option>Hair colour</option>
+        <option>Facial</option><option>Skin cleanup</option>
+        <option>Bridal makeup</option><option>Party makeup</option><option>Engagement makeup</option>
+        <option>Eyebrow threading</option><option>Face waxing</option>
+        <option>Manicure</option><option>Pedicure</option><option>Mehendi</option>
+      </select></div>
+      <div class="formgroup"><label for="bDay">Preferred day</label><input type="date" id="bDay" required></div>
+      <div class="formgroup"><label for="bTime">Preferred time</label><input type="time" id="bTime" required></div>
+      <div class="formgroup"><label for="bNotes">Notes</label><input type="text" id="bNotes" placeholder="Anything we should know"></div>
+      <button type="submit" class="btn-send">Send booking on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="container visit">
+  <h2>Visit us</h2>
+  <div class="addrbig">WJGG+PC7, Shāhdādpur<span>, 68030 Pakistan</span></div>
+  <p>Find us easily in Shāhdādpur. Message us on WhatsApp for today's timings.</p>
+  <div class="visitrow">
+    <div class="chip"><b>Opening</b><span>Open &middot; Closes 11 PM</span></div>
+    <div class="chip"><b>Phone</b><span>+92 305 1346424</span></div>
+  </div>
+  <div class="mapwrap" aria-label="Map illustration"></div>
+  <div class="btn-row">
+    <button class="btn-map" onclick="loc.href='https://www.google.com/maps/search/Naina%27s+Makeup+Studio+WJGG+PC7+Shahdadpur+68030+Pakistan'">Open in Google Maps</button>
+    <a class="btn-call" href="tel:+923051346424">Tap to call</a>
+  </div>
+</section>
+
+<footer class="footer container">
+  <div class="foottop">
+    <div class="footlogo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4v16M16 4v16M8 4L16 20M16 4L8 20"/></svg></div>
+    <div class="footname">Naina's <span>Makeup Studio</span></div>
+  </div>
+  <div class="footcontact">
+    <b>Naina's Makeup Studio</b><br>
+    Shāhdādpur, 68030, Pakistan<br>
+    <b>WhatsApp:</b> <a href="https://wa.me/923051346424">+92 305 1346424</a><br>
+    <b>Call:</b> <a href="tel:+923051346424">+92 305 1346424</a>
+  </div>
+  <div class="demofoot">Demo preview. Final photos, services and timings will be set together with you.</div>
+</footer>
+
+<div class="sticky-wa">
+  <a href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum,%20I%20saw%20your%20website%20demo%20for%20Naina%27s%20Makeup%20Studio%20and%20would%20like%20to%20book%20an%20appointment.">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15.73l-4.64-3.31-1.77 2.29 3.39 1.04 4.19-5.56z"/><path d="M5 13c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v7zm2 0V9h7v4.73c-.31-.19-.65-.32-1.02-.32H7c-.55 0-1 .45-1 1z"/></svg>
+    WhatsApp us
+  </a>
+</div>
+
+<script>
+  (function(){
+    var loc = window.location;
+    var chat = document.getElementById('chat');
+    var typing = document.getElementById('typing');
+
+    function addBubble(text, cls, delay){
+      return new Promise(function(resolve){
+        setTimeout(function(){
+          var d = document.createElement('div');
+          d.className = 'bubble ' + cls;
+          d.textContent = text;
+          chat.appendChild(d);
+          chat.scrollTop = chat.scrollHeight;
+          resolve();
+        }, delay);
+      });
+    }
+
+    function playChat(){
+      typing.style.display = 'flex';
+      return addBubble('Assalam o Alaikum, I would like to book an appointment.', 'me', 400)
+        .then(function(){ return new Promise(function(r){ setTimeout(r, 1500); }); })
+        .then(function(){
+          typing.style.display = 'none';
+          return addBubble('Assalam o Alaikum! We have received your request.', 'them', 300);
+        });
+    }
+
+    var booked = sessionStorage.getItem('naina_chat_played');
+    if(!booked){
+      playChat();
+      sessionStorage.setItem('naina_chat_played','1');
+    }
+
+    var services = [
+      'Haircut','Hair styling','Hair colour','Facial','Skin cleanup',
+      'Bridal makeup','Party makeup','Engagement makeup','Eyebrow threading',
+      'Face waxing','Manicure','Pedicure','Mehendi'
+    ];
+    var marquee = document.getElementById('marquee');
+    services.forEach(function(s){
+      var span1 = document.createElement('span'); span1.textContent = s;
+      var span2 = document.createElement('span'); span2.textContent = s;
+      marquee.appendChild(span1); marquee.appendChild(span2);
+    });
+
+    var form = document.getElementById('bookForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('bName').value.trim();
+      var service = document.getElementById('bService').value;
+      var day = document.getElementById('bDay').value;
+      var time = document.getElementById('bTime').value;
+      var notes = document.getElementById('bNotes').value.trim();
+      if(!name||!service||!day||!time){ alert('Please fill in name, service, day and time.'); return; }
+      var msg = 'Assalam o Alaikum, I want to book an appointment at Naina\'s Makeup Studio.%0AName: '+encodeURIComponent(name)+'%0AService: '+encodeURIComponent(service)+'%0ADay: '+encodeURIComponent(day)+'%0ATime: '+encodeURIComponent(time)+ (notes ? '%0ANotes: '+encodeURIComponent(notes) : '');
+      loc.href = 'https://wa.me/923051346424?text='+msg;
+    });
+  })();
+</script>
+
+</body>
+</html>
