@@ -39,9 +39,11 @@
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;text-decoration:none;}
+  button,a{-webkit-tap-highlight-color:transparent;}
+  :focus-visible{outline:3px solid var(--lilac-dark);outline-offset:3px;}
   img{max-width:100%;display:block;}
-  .container{width:100%;max-width:430px;margin:0 auto;padding:0 16px;}
-  section{padding:40px 0;}
+  .container{width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,32px);}
+  section{padding:clamp(36px,6vw,68px) 0;}
   .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
 
   /* Ribbon */
@@ -61,9 +63,12 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:20px 0 24px;
+    gap:16px;
+    max-width:1180px;
+    margin:0 auto;
+    padding:20px clamp(16px,3vw,32px) 24px;
   }
-  .logo{display:flex;align-items:center;gap:12px;}
+  .logo{display:flex;align-items:center;gap:12px;min-width:0;}
   .monogram{
     width:44px;height:44px;
     background:linear-gradient(135deg,var(--ink),var(--ink2));
@@ -76,6 +81,7 @@
   .brandname{font-family:var(--font-head);font-size:20px;font-weight:800;letter-spacing:-0.4px;color:var(--ink);}
   .brandname span{font-weight:400;font-style:italic;color:var(--lilac-dark);}
   .btn-book{
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
     background:var(--ink);
     color:var(--white);
     font-family:var(--font-body);
@@ -85,6 +91,8 @@
     border-radius:var(--radius-pill);
     padding:12px 20px;
     cursor:pointer;
+    text-align:center;
+    text-decoration:none;
     box-shadow:0 10px 22px rgba(22,26,51,0.22);
     transition:transform .15s,box-shadow .15s,background .15s;
   }
@@ -137,6 +145,8 @@
   .herotwo{display:flex;flex-direction:column;gap:12px;z-index:2;position:relative;}
   .cta-wrap{display:flex;flex-direction:column;gap:10px;}
   .btn-primary{
+    display:block;
+    width:100%;
     background:linear-gradient(135deg,var(--ink),var(--ink2));
     color:var(--white);
     font-family:var(--font-body);
@@ -149,6 +159,7 @@
     box-shadow:0 14px 26px rgba(22,26,51,0.28);
     transition:transform .15s,box-shadow .15s;
     text-align:center;
+    text-decoration:none;
   }
   .btn-primary:active{transform:scale(0.97);}
   .btn-outline{
@@ -193,9 +204,8 @@
   .dot:nth-child(2){animation-delay:0.2s;}
   .dot:nth-child(3){animation-delay:0.4s;}
   @keyframes blip{0%,80%,100%{transform:scale(0.9);opacity:0.4;}40%{transform:scale(1.15);opacity:1;}}
-  .sendbar{display:flex;align:center;padding-top:6px;}
-  .sendbar{display:flex;align-items:center;gap:8px;}
-  .sendbar input{flex:1;background:#1B2035;border:1px solid #3A4160;border-radius:20px;padding:8px 14px;color:#FFFFFF;font-size:13px;}
+  .sendbar{display:flex;align-items:center;gap:8px;padding-top:6px;}
+  .sendbar input{min-width:0;flex:1;background:#1B2035;border:1px solid #3A4160;border-radius:20px;padding:8px 14px;color:#FFFFFF;font-size:13px;}
   .sendbar input::placeholder{color:#8B93B8;}
   .sendbar button{background:var(--lilac);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;}
   .phone-mask{
@@ -255,12 +265,14 @@
     display:flex;align-items:center;justify-content:space-between;
     padding:10px 12px;border:1px solid var(--lav2);border-radius:14px;background:var(--white);
   }
-  .svcitem .info{flex:1;}
+  .svcitem .info{flex:1;min-width:0;}
   .svcitem .name{font-weight:700;font-size:15px;color:var(--ink);margin-bottom:2px;}
   .svcitem .desc{font-size:13px;color:var(--muted);}
   .svcitem .ask{
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
     background:var(--ink);color:var(--white);font-weight:700;font-size:13px;
     border:none;border-radius:10px;padding:7px 12px;cursor:pointer;
+    text-decoration:none;
   }
   .svcitem .ask:active{transform:scale(0.96);}
 
@@ -281,8 +293,10 @@
   }
   .feature p{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.9);margin-bottom:18px;position:relative;z-index:2;}
   .feature .btn-zari{
+    display:inline-flex;align-items:center;justify-content:center;
     background:var(--lilac);color:var(--ink);font-weight:800;font-size:15px;
     border:none;border-radius:var(--radius-pill);padding:12px 20px;cursor:pointer;position:relative;z-index:2;
+    text-align:center;text-decoration:none;
   }
   .feature .btn-zari:active{transform:scale(0.97);}
 
@@ -301,7 +315,7 @@
   .step .txt p{font-size:14px;color:var(--muted);line-height:1.5;}
 
   /* Form */
-  .formwrap{background:var(--lav);border:1px solid var(--lav2);border-radius:var(--radius-lg);padding:26px 20px;}
+  .formwrap{width:100%;max-width:860px;margin:0 auto;background:var(--lav);border:1px solid var(--lav2);border-radius:var(--radius-lg);padding:26px 20px;}
   .formwrap h2{
     font-family:var(--font-head);font-size:23px;font-weight:800;color:var(--ink);
     margin-bottom:6px;letter-spacing:-0.4px;
@@ -342,12 +356,15 @@
   .mapwrap{margin:18px 0;border-radius:18px;overflow:hidden;border:1px solid var(--lav2);background:#101429;min-height:220px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-size:14px;}
   .visit .btn-row{display:flex;gap:10px;margin-top:8px;}
   .visit .btn-map{
+    display:flex;align-items:center;justify-content:center;
     flex:1;background:var(--ink);color:var(--white);font-weight:800;font-size:15px;
     border:none;border-radius:var(--radius-pill);padding:13px 16px;cursor:pointer;
+    text-align:center;text-decoration:none;
   }
   .visit .btn-call{
+    display:flex;align-items:center;justify-content:center;
     background:transparent;color:var(--ink);border:2px solid var(--ink);font-weight:800;font-size:15px;
-    border-radius:var(--radius-pill);padding:13px 16px;cursor:pointer;
+    border-radius:var(--radius-pill);padding:13px 16px;cursor:pointer;text-align:center;
   }
 
   /* Footer */
@@ -363,7 +380,7 @@
     font-size:12px;color:#8B93B8;text-align:center;margin-top:22px;padding-top:16px;border-top:1px solid var(--lav2);
   }
   .sticky-wa{
-    position:fixed;right:16px;bottom:16px;z-index:50;
+    position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:50;
   }
   .sticky-wa a{
     display:flex;align-items:center;gap:10px;background:#25D366;color:#FFFFFF;
@@ -371,6 +388,54 @@
     box-shadow:0 12px 24px rgba(37,211,102,0.35);border:2px solid #FFFFFF;
   }
   .sticky-wa svg{width:22px;height:22px;fill:none;stroke:#FFFFFF;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+  .mapwrap iframe{display:block;width:100%;height:260px;border:0;}
+  .btn-outline,.btn-send,.btn-map,.btn-call,.btn-zari,.btn-book,.btn-primary,.svcitem .ask,.sticky-wa a{min-height:44px;}
+  .btn-book:hover,.btn-primary:hover,.svcitem .ask:hover,.btn-send:hover,.btn-map:hover{filter:brightness(1.12);}
+  @media (min-width:760px){
+    .hero .container{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.85fr);align-items:center;gap:clamp(32px,6vw,72px);}
+    .hero-head{align-self:center;}
+    .herotwo{gap:18px;}
+    .phonecard{height:390px;margin-top:0;}
+    .hero h1{font-size:clamp(34px,4vw,54px);}
+    .urdu-line{font-size:26px;}
+    .menuhead{margin-bottom:16px;}
+    .menu h2{font-size:32px;}
+    .servicesmenu{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+    .svcgroup{margin-top:0;}
+    .steps{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .formgrid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .btn-send{grid-column:1/-1;}
+    .visitrow{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .mapwrap iframe{height:340px;}
+    .feature.container{padding-inline:clamp(24px,5vw,56px);}
+    .feature{padding:clamp(32px,5vw,56px);}
+  }
+  @media (max-width:560px){
+    .headerbar{gap:10px;padding-top:14px;padding-bottom:18px;}
+    .logo{gap:8px;}
+    .monogram{width:38px;height:38px;border-radius:12px;}
+    .brandname{font-size:clamp(15px,4.5vw,19px);letter-spacing:-.5px;}
+    .btn-book{font-size:12px;padding:10px 12px;}
+    .hero h1{font-size:clamp(25px,7vw,32px);overflow-wrap:anywhere;}
+    .menuhead{align-items:flex-start;gap:10px;flex-wrap:wrap;}
+    .pricenote{font-size:12px;padding:6px 10px;}
+    .visitrow{grid-template-columns:1fr;}
+    .visit .btn-row{flex-wrap:wrap;}
+    .visit .btn-map,.visit .btn-call{flex:1 1 140px;}
+    .addrbig{font-size:clamp(25px,7vw,30px);overflow-wrap:anywhere;}
+    .feature .btn-zari{width:100%;}
+    .mapwrap iframe{height:240px;}
+  }
+  @media (max-width:360px){
+    .headerbar{padding-inline:12px;}
+    .monogram{width:34px;height:34px;}
+    .logo{gap:6px;}
+    .brandname{font-size:14px;}
+    .btn-book{font-size:11px;padding:9px 9px;}
+    .container{padding-inline:12px;}
+    .sticky-wa{right:10px;bottom:max(10px,env(safe-area-inset-bottom));}
+    .sticky-wa a{font-size:13px;padding:11px 13px;}
+  }
 </style>
 </head>
 <body>
@@ -387,7 +452,7 @@
     </div>
     <div class="brandname">Naina's <span>Makeup Studio</span></div>
   </div>
-  <button class="btn-book" onclick="loc.href='https://wa.me/923051346424?text='+encodeURIComponent('Assalam o Alaikum, I saw Naina&#39;s Makeup Studio&#39;s website demo and would like to book an appointment.')">Book on WhatsApp</button>
+  <a class="btn-book" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%20saw%20Naina%27s%20Makeup%20Studio%27s%20website%20demo%20and%20would%20like%20to%20book%20an%20appointment.">Book on WhatsApp</a>
 </header>
 
 <section class="hero">
@@ -400,10 +465,10 @@
     </div>
     <div class="herotwo">
       <div class="cta-wrap reveal">
-        <button class="btn-primary" onclick="loc.href='https://wa.me/923051346424?text='+encodeURIComponent('Assalam o Alaikum, I would like to book an appointment at Naina&#39;s Makeup Studio, Shāhdādpur.')">Book on WhatsApp</button>
+        <a class="btn-primary" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Naina%27s%20Makeup%20Studio%2C%20Sh%C4%81hd%C4%81dpur.">Book on WhatsApp</a>
         <a class="btn-outline" href="tel:+923051346424">Call now</a>
       </div>
-      <div class="phonecard reveal" aria-label="WhatsApp booking chat preview" role="img" aria-label="WhatsApp chat showing a customer booking a salon appointment">
+      <div class="phonecard reveal" role="img" aria-label="WhatsApp chat showing a customer booking a salon appointment">
         <div class="phone-header"></div>
         <div class="screen">
           <div class="statusrow"><span style="color:#5B628A">11:42</span><span style="color:#5B628A">Naina&rsquo;s Makeup Studio</span></div>
@@ -435,28 +500,28 @@
   <div class="servicesmenu">
     <div class="svcgroup">
       <h3>Hair</h3>
-      <div class="svcitem"><div class="info"><div class="name">Haircut</div><div class="desc">Women's haircut and trim</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Hair styling</div><div class="name">Blow-dry and set</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Hair colour</div><div class="desc">Colour and highlights</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Haircut</div><div class="desc">Women's haircut and trim</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Haircut.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Hair styling</div><div class="desc">Blow-dry and set</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Hair%20styling.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Hair colour</div><div class="desc">Colour and highlights</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Hair%20colour.">Book</a></div>
     </div>
     <div class="svcgroup">
       <h3>Skin &amp; Facials</h3>
-      <div class="svcitem"><div class="info"><div class="name">Facial</div><div class="desc">Deep cleanse and glow</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Skin cleanup</div><div class="desc">Pore cleansing and polish</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Facial</div><div class="desc">Deep cleanse and glow</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20a%20Facial.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Skin cleanup</div><div class="desc">Pore cleansing and polish</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Skin%20cleanup.">Book</a></div>
     </div>
     <div class="svcgroup">
       <h3>Makeup &amp; Bridal</h3>
-      <div class="svcitem"><div class="info"><div class="name">Bridal makeup</div><div class="desc">Full bridal look</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Party makeup</div><div class="desc">Evening and event look</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Engagement makeup</div><div class="desc">Engagement ceremony look</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Bridal makeup</div><div class="desc">Full bridal look</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Bridal%20makeup.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Party makeup</div><div class="desc">Evening and event look</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Party%20makeup.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Engagement makeup</div><div class="desc">Engagement ceremony look</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Engagement%20makeup.">Book</a></div>
     </div>
     <div class="svcgroup">
       <h3>Threading / Waxing / Hands &amp; Feet</h3>
-      <div class="svcitem"><div class="info"><div class="name">Eyebrow threading</div><div class="desc">Precise brow shaping</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Face waxing</div><div class="desc">Gentle facial wax</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Manicure</div><div class="desc">Hand and nail care</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Pedicure</div><div class="desc">Foot and nail care</div></div><button class="ask">Book</button></div>
-      <div class="svcitem"><div class="info"><div class="name">Mehendi</div><div class="desc">Henna for hands</div></div><button class="ask">Book</button></div>
+      <div class="svcitem"><div class="info"><div class="name">Eyebrow threading</div><div class="desc">Precise brow shaping</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Eyebrow%20threading.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Face waxing</div><div class="desc">Gentle facial wax</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Face%20waxing.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Manicure</div><div class="desc">Hand and nail care</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Manicure.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Pedicure</div><div class="desc">Foot and nail care</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Pedicure.">Book</a></div>
+      <div class="svcitem"><div class="info"><div class="name">Mehendi</div><div class="desc">Henna for hands</div></div><a class="ask" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20to%20ask%20about%20Mehendi.">Book</a></div>
     </div>
   </div>
 </section>
@@ -465,7 +530,7 @@
   <div class="feature">
     <h2>Bridal &amp; party looks</h2>
     <p>Getting ready for your big day or a special evening? Message us on WhatsApp to ask about bridal dates, timings, and your look.</p>
-    <button class="btn-zari" onclick="loc.href='https://wa.me/923051346424?text='+encodeURIComponent('Assalam o Alaikum, I want to ask about bridal and party makeup at Naina&#39;s Makeup Studio.')">Ask about bridal dates on WhatsApp</button>
+    <a class="btn-zari" href="https://wa.me/923051346424?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20ask%20about%20bridal%20and%20party%20makeup%20at%20Naina%27s%20Makeup%20Studio.">Ask about bridal dates on WhatsApp</a>
   </div>
 </section>
 
@@ -507,9 +572,11 @@
     <div class="chip"><b>Opening</b><span>Open &middot; Closes 11 PM</span></div>
     <div class="chip"><b>Phone</b><span>+92 305 1346424</span></div>
   </div>
-  <div class="mapwrap" aria-label="Map illustration"></div>
+  <div class="mapwrap">
+    <iframe title="Map to Naina's Makeup Studio in Shāhdādpur" src="https://www.google.com/maps?q=WJGG%2BPC7%2C%20Sh%C4%81hd%C4%81dpur%2C%20Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
   <div class="btn-row">
-    <button class="btn-map" onclick="loc.href='https://www.google.com/maps/search/Naina%27s+Makeup+Studio+WJGG+PC7+Shahdadpur+68030+Pakistan'">Open in Google Maps</button>
+    <a class="btn-map" href="https://www.google.com/maps/search/Naina%27s+Makeup+Studio+WJGG+PC7+Shahdadpur+68030+Pakistan">Open in Google Maps</a>
     <a class="btn-call" href="tel:+923051346424">Tap to call</a>
   </div>
 </section>
@@ -591,8 +658,15 @@
       var time = document.getElementById('bTime').value;
       var notes = document.getElementById('bNotes').value.trim();
       if(!name||!service||!day||!time){ alert('Please fill in name, service, day and time.'); return; }
-      var msg = 'Assalam o Alaikum, I want to book an appointment at Naina\'s Makeup Studio.%0AName: '+encodeURIComponent(name)+'%0AService: '+encodeURIComponent(service)+'%0ADay: '+encodeURIComponent(day)+'%0ATime: '+encodeURIComponent(time)+ (notes ? '%0ANotes: '+encodeURIComponent(notes) : '');
-      loc.href = 'https://wa.me/923051346424?text='+msg;
+      var msg = [
+        'Assalam o Alaikum, I want to book an appointment at Naina\'s Makeup Studio.',
+        'Name: ' + name,
+        'Service: ' + service,
+        'Day: ' + day,
+        'Time: ' + time
+      ];
+      if(notes){ msg.push('Notes: ' + notes); }
+      loc.href = 'https://wa.me/923051346424?text='+encodeURIComponent(msg.join('\n'));
     });
   })();
 </script>
